@@ -1,0 +1,64 @@
+/* globals.css */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+/* Define color variables for easy theming and consistency */
+:root {
+  --color-primary: #000000;   /* A vibrant blue */
+  --color-secondary: #000000; /* A neutral slate gray */
+  --color-accent: #f1f5f9;    /* A light blue-gray */
+  --color-text: #1e293b;      /* A very dark blue-gray for text */
+  --color-text-light: #ffffff;/* White for text on dark backgrounds */
+  --color-background: #000000;/* Main background color */
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* A subtle shadow */
+  --border-radius: 20px;       /* Default border radius */
+}
+
+/* Apply a natural box layout model to all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Base typography and body styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improved focus styles for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Remove default button styles for easier custom styling */
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Basic link styles */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--color-primary) 80%, black);
+}
