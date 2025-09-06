@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="../css/styles.css" />
     <link rel="stylesheet" href="../css/globals.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 <body>
@@ -26,6 +27,35 @@
       </div>
     </nav>
 
-<!--  -->
+
+<!-- Profile name and Icon -->
+ <div class="profile">
+    <div class="profile-name">
+        <p>Tony Liptik</p>
+    </div>
+    <div class="profile-icon">
+        <img src="../assets/profile.svg" alt="Profile">
+    </div>
+ </div>
+
+<!-- Portfolio Overview Chart -->
+<div class="chart-container">
+    <div class="buttons">
+        <button onclick="updateChart('daily')">1D</button>
+        <button onclick="updateChart('weekly')">1W</button>
+        <button onclick="updateChart('monthly')">1M</button>
+        <button onclick="updateChart('yearly')">1Y</button>
+        <button onclick="updateChart('all')">All</button>
+    </div>
+
+    <canvas id="portfolioChart" class="portfolioChart"></canvas>
+</div>
+
+
+
+
+
+<!-- Load Javascript Scripts -->
+ <script src="../js/portfolio-overview.js"></script>
 </body>
 </html>
