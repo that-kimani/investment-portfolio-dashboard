@@ -1,3 +1,4 @@
+// Mock up data.
 const mockData = {
   daily: {
     labels: ["2025-09-01", "2025-09-02", "2025-09-03", "2025-09-04", "2025-09-05", "2025-09-08", "2025-09-09"],
@@ -22,10 +23,17 @@ const mockData = {
 };
 
 
+
+// Chart settings and functionality.
+// Get the canvas context where the chart will be drawn
 let ctx = document.getElementById("portfolioChart").getContext("2d");
 
+
+// Initialize Chart.js line chart
 let chart = new Chart(ctx, {
   type: "line",
+
+  
   data: {
     labels: mockData.daily.labels,
     datasets: [{
@@ -36,23 +44,83 @@ let chart = new Chart(ctx, {
       tension: 0.3
     }]
   },
+
+
   options: {
     responsive: true,
+
     plugins: {
       tooltip: {
         mode: "index",
         intersect: false,
+      },
+    //   Hide the legend/key
+      legend: {
+        display:false
       }
     },
     scales: {
       x: { display: true },
-      y: { display: true }
+      y: { display: true },
+
+      x: {
+        ticks: {
+            color: "aliceblue",
+            font: {
+                size:9,
+                weight: 100,
+            },
+      }
+     },
+
+      y: {
+        ticks: {
+                color: "aliceblue",
+                font: {
+                    size:9,
+                    weight: 100,
+                },
+                maxTicksLimit: 5, // 👈 limits to about 5 markings
+                callback: (val) => "$" + val.toLocaleString()
+        },
+        grid: {
+                color: "rgba(255, 255, 255, 0.1)",
+                drawBorder: false
+        }
+      }
     }
   }
 });
 
+
+// Track portfolio value and display value and day's profit.
+// Get HTML elements
+const portfolioValueEl = document.querySelector(".portfolio-overview h1");
+const profitEl = document.querySelector(".portfolio-overview p");
+
+// Function to update portfolio overview based on selected view
+function updatePortfolioOverview(view) {
+  const balances = mockData[view].data;
+  const lastBalance = balances[balances.length - 1];
+  const prevBalance = balances[balances.length - 2] || lastBalance; // fallback for safety
+
+  // Calculate profit (difference)
+  const profit = lastBalance - prevBalance;
+
+  // Update HTML
+  portfolioValueEl.textContent = `$${lastBalance.toLocaleString()}`;
+  profitEl.textContent = `Your ${view} profit is $${profit.toLocaleString()}`;
+}
+
+// Run once at page load (default = daily)
+updatePortfolioOverview("daily");
+
+// Call this whenever chart updates
 function updateChart(view) {
   chart.data.labels = mockData[view].labels;
   chart.data.datasets[0].data = mockData[view].data;
   chart.update();
+
+  // also update overview text
+  updatePortfolioOverview(view);
 }
