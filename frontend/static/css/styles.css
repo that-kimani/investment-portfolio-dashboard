@@ -61,19 +61,20 @@
 
 /* Syling for the profile name and icon */
 .profile {
-  width: 8.5rem;
+  width: 15rem;
   position: relative;
   top: 0.65rem;
   display: block;
-  left: 70rem
+  left: 64rem
 
 }
 .profile-name { 
-  width: 80px;
-  height: 10px;
+  width: 11rem;
+  height: 1rem;
   color:aliceblue;
   position: relative;
-  top: 0.85rem;
+  top: 0.95rem;
+  text-align: right;
 }
 .profile-icon {
   width: 35px;
@@ -81,7 +82,8 @@
   border-radius: 50%; /* makes it a circle */
   overflow: hidden;   /* ensures the image doesn’t spill out */
   position: relative;
-  left: 5.66rem;
+  left: 11.5rem;
+  bottom:0.2rem;
 }
 .profile-icon img {
   width: 100%;
