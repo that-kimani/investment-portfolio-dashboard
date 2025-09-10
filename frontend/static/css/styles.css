@@ -106,44 +106,44 @@
   border-radius: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 29rem;
-  height: 20.1rem;
+  height: 17.5rem;
   position: relative;
-  top: 2.5rem;
+  top: 1.5rem;
   left: 2rem;
 }
 .portfolio-overview{
   width: 16rem;
-  height: 4rem;
+  height: 4.2rem;
   position: relative;
   bottom: 0.6rem;
 }
 
 .portfolio-overview h1{
-  width: 7rem;
-  height: 1rem;
+  width: 12rem;
+  height: 2rem;
   color: aliceblue;
   font-size: large;
   font-weight: 400;
   position: relative;
-  top: 0.35rem;
+  bottom: 0.6rem;
 }
 
 .portfolio-overview h2{
   width: 12rem;
-  height: 1rem;
+  height: 2rem;
   color: aliceblue;
   position: relative;
   font-size:1rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .portfolio-overview p{
   width: 12rem;
-  height: 2rem;
+  height: 1.4rem;
   color: aliceblue;
   font-size: 0.85rem;
   position: relative;
-  top: 0.8rem;
+  bottom: 1rem;
   font-weight: 300;
 }
 
@@ -178,26 +178,104 @@
 }
 
 .portfolioChart{
-  width: 26rem;
+  width: 30rem;
   height: 13rem;
   position: relative;
   left: 0.5rem;
   bottom: 1rem;
 }
 
+.portfolioChart canvas{
+    height: 10.5rem !important;
+    width: 26rem !important;
+}
 
 
+/* ---------------------------------------------------------------------- */
+/* Profit and loss component */
+.profit-and-loss-component {
+  background: rgb(15, 15, 15);
+  padding: 20px;
+  border-radius: 0.7rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 18.3rem;
+  height: 14.8rem;
+  position: relative;
+  top: 2.7rem;
+  left: 2rem;
+}
+
+.profit-and-loss-overview{
+  width: 16rem;
+  height: 3rem;
+  position: relative;
+  bottom: 0.6rem;
+}
+
+.profit-and-loss-overview h1{
+  width: 12rem;
+  height: 2rem;
+  color: aliceblue;
+  font-size: medium;
+  font-weight: 500;
+  position: relative;
+  bottom: 0.6rem;
+}
+
+.profit-and-loss-overview h2{
+  width: 12rem;
+  height: 2rem;
+  color: aliceblue;
+  position: relative;
+  font-size:0.8rem;
+  font-weight: 400;
+}
+
+.profitChart {
+  width: 17rem;
+  height: 9rem;
+  position: relative;
+  bottom: 0rem;
+
+}
+
+.profitChart canvas{
+  width: 16rem !important;
+  height: 10rem !important;
+}
 
 
+/* ---------------------------------------------------------------------- */
+/* Asset allocation component */
+.asset-allocation-component {
+  background: rgb(15, 15, 15);
+  padding: 20px;
+  border-radius: 0.7rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 18.3rem;
+  height: 14.8rem;
+  position: relative;
+  top: -12rem;
+  left: 21rem;
+}
 
+.asset-allocation-overview {
+  width: 10rem;
+  height: 2rem;
+}
 
+.asset-allocation-overview h1 {
+  color: aliceblue;
+  position: relative;
+  font-size:0.8rem;
+  font-weight: 400;
+  bottom: 0.5rem;
+}
 
-
-
-
-
-
-
+.asset-allocation-donut {
+  width: 19rem;
+  height: 14rem;
+}
 
 
 

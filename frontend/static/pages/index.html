@@ -40,7 +40,7 @@
     </div>
  </div>
 
-<!-- Portfolio Overview Chart -->
+<!-- Portfolio Overview Component -->
 <div class="chart-container">
 
     <div class="portfolio-overview">
@@ -60,13 +60,43 @@
     <div class="portfolioChart">
         <canvas id="portfolioChart"></canvas>
     </div>
+    
 </div>
 
 
+<!-- Profit  and Loss component -->
+ <div class="profit-and-loss-component">
 
+    <div class="profit-and-loss-overview">
+        <h2>Today's PnL</h2>
+        <h1>$35</h1>
+    </div>
+
+    <div class="profitChart">
+        <canvas id="profitChart"></canvas>
+    </div>
+
+ </div>
+
+
+<!-- Asset Allocation Component -->
+<div class="asset-allocation-component">
+
+    <div class="asset-allocation-overview">
+        <h1>Asset Allocation</h1>
+    </div>
+
+    <div class="asset-allocation-donut">
+        <canvas id="asset-allocation-donut"></canvas>
+    </div>
+
+</div>
 
 
 <!-- Load Javascript Scripts -->
  <script src="../js/portfolio-overview.js"></script>
+ <script src="../js/profit-and-loss.js"></script>
+  <script src="../js/asset-allocation.js"></script>
+
 </body>
 </html>

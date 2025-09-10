@@ -1,5 +1,5 @@
 // Mock up data.
-const mockData = {
+const portfolio_overview_mockData = {
   daily: {
     labels: ["2025-09-01", "2025-09-02", "2025-09-03", "2025-09-04", "2025-09-05", "2025-09-08", "2025-09-09"],
     data: [100000, 100012, 100015, 100026, 100032, 100030, 100035],
@@ -26,19 +26,19 @@ const mockData = {
 
 // Chart settings and functionality.
 // Get the canvas context where the chart will be drawn
-let ctx = document.getElementById("portfolioChart").getContext("2d");
+let portfolio_overview_ctx = document.getElementById("portfolioChart").getContext("2d");
 
 
 // Initialize Chart.js line chart
-let chart = new Chart(ctx, {
+let chart = new Chart(portfolio_overview_ctx, {
   type: "line",
 
   
   data: {
-    labels: mockData.daily.labels,
+    labels: portfolio_overview_mockData.daily.labels,
     datasets: [{
       label: "Portfolio Balance",
-      data: mockData.daily.data,
+      data: portfolio_overview_mockData.daily.data,
       borderColor: "white",
       fill: false,
       tension: 0.3
@@ -48,6 +48,8 @@ let chart = new Chart(ctx, {
 
   options: {
     responsive: true,
+    maintainAspectratio: false,
+
 
     plugins: {
       tooltip: {
@@ -84,7 +86,7 @@ let chart = new Chart(ctx, {
                 callback: (val) => "$" + val.toLocaleString()
         },
         grid: {
-                color: "rgba(255, 255, 255, 0.1)",
+                color: "rgba(255, 255, 255, 0.14)",
                 drawBorder: false
         }
       }
@@ -100,7 +102,7 @@ const profitEl = document.querySelector(".portfolio-overview p");
 
 // Function to update portfolio overview based on selected view
 function updatePortfolioOverview(view) {
-  const balances = mockData[view].data;
+  const balances = portfolio_overview_mockData[view].data;
   const lastBalance = balances[balances.length - 1];
   const prevBalance = balances[balances.length - 2] || lastBalance; // fallback for safety
 
@@ -117,8 +119,8 @@ updatePortfolioOverview("daily");
 
 // Call this whenever chart updates
 function updateChart(view) {
-  chart.data.labels = mockData[view].labels;
-  chart.data.datasets[0].data = mockData[view].data;
+  chart.data.labels = portfolio_overview_mockData[view].labels;
+  chart.data.datasets[0].data = portfolio_overview_mockData[view].data;
   chart.update();
 
   // also update overview text
