@@ -5,7 +5,7 @@
     width: 28rem;
     height: 2.5rem; /* Using rem for better scalability */
     position: fixed;
-    top: 1.3rem;
+    top: 0.9rem;
     left: 27rem;
     z-index: 50; /* High z-index to ensure it stays on top */
     background-color: #191919;
@@ -280,16 +280,139 @@
 
 
 
+/* ---------------------------------------------------------------------- */
+/* === News Feed Component Styling === */
+.news-feed-component {
+  background: rgb(15, 15, 15);
+  border-radius: 0.7rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  width: 27rem;
+  height: 14rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 32.5rem;
+  left: 2rem;
 
+}
 
+.news-component-title h1 {
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+  color: aliceblue;
+}
 
+.news-container {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
+.news-item {
+  padding: 0.5rem;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  border-radius: 0.3rem;
+  transition: background 0.2s ease;
+}
 
+.news-item:last-child {
+  border-bottom: none;
+}
 
+.news-item:hover {
+  background: #222222;
+}
 
+.news-headline {
+  font-size: 0.8rem;
+  font-weight: 450;
+  margin: 0;
+  color: aliceblue;
+}
 
+.news-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: rgb(150, 150, 150);
+  margin-top: 0.25rem;
+}
 
+/* ---------------------------------------------------------------------- */
+/* Recent Activity Component */
+/* === Recent Activity Component Styling === */
+/* Container styling remains the same */
+.recent-activity-component {
+  background: rgb(15, 15, 15);
+  border-radius: 0.7rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  width: 28rem;
+  height: 14rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 46.5rem;
+  left: 50rem;
+}
 
+.recent-activity-component h2 {
+  font-size: 0.8em;
+  font-weight: 450;
+  margin-bottom: 0.5rem;
+  color: aliceblue;
+}
+
+.activity-container {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Row as flex for columns */
+.activity-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s ease;
+  font-size: 0.7rem;
+  color: #f0f0f0;
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-item:hover {
+  background: #222222;
+}
+
+/* Column styling */
+.activity-column {
+  flex: 1; /* distributes space equally */
+  text-align: left;
+}
+
+/* Activity type coloring */
+.activity-buy {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.activity-sell {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Optionally, right-align price and time */
+.activity-price, .activity-time {
+  text-align: right;
+}
 
 
 
